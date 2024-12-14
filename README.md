@@ -137,10 +137,7 @@ classroom_management.exe
 4. 优化内存使用
 5. 添加图形用户界面
 
-## 作者
-
-[tkzzzzzz6]
 
 ## 许可证
 
-This project is licensed under the MIT License - see the LICENSE file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
