@@ -94,7 +94,7 @@ int main()
         }
     } while (choice != 0);
 
-    // 这里应该添加内存清理代码
+    // 内存释放
     destroyHashTable(buildingHash);
     destroyAVL(root);
     printf("内存清理完成\n");
