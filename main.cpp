@@ -4,8 +4,6 @@
 
 Classroom *root = NULL;
 HashTable *buildingHash = NULL;
-void showMenu();
-void importFromCSV(const char *filename);
 
 int main()
 {
