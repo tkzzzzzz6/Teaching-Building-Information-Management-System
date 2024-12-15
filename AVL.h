@@ -42,5 +42,5 @@ Classroom* insertAVL(Classroom* node, Classroom* newRoom);
 Classroom* findMin(Classroom* node);
 Classroom* deleteAVL(Classroom* root, int id);
 void destroyAVL(Classroom *node);
-
+void printUnscheduledClassrooms(HashTable *ht);
 #endif 

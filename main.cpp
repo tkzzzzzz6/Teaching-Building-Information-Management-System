@@ -56,9 +56,9 @@ int main()
             if (room)
             {
                 printf("\n找到教室:\n");
-                printf("ID: %d\n教学楼: %s\n教室: %s\n类型: %s\n容量: %d\n",
+                printf("ID: %d\n教学楼: %s\n教室: %s\n类型: %s\n容量: %d\n是否排课: %d\n",
                        room->id, room->building, room->name,
-                       room->type, room->capacity);
+                       room->type, room->capacity, room->is_scheduled);
             }
             else
             {
@@ -82,6 +82,12 @@ int main()
             char filename[256];
             scanf("%s", filename);
             importFromCSV(filename);
+            break;
+        }
+        case 5:
+        {
+            //打印现在没有排课的教室
+            printUnscheduledClassrooms(buildingHash);
             break;
         }
         case 0:

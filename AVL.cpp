@@ -130,6 +130,7 @@ void showMenu()
     printf("2. 查找教室(按ID)\n");
     printf("3. 查看教学楼的所有教室\n");
     printf("4. 导入CSV数据\n");
+    printf("5. 打印现在没有排课的教室\n");
     printf("0. 退出\n");
     printf("请选择操作: ");
 }
@@ -368,4 +369,26 @@ void destroyAVL(Classroom *node)
     destroyAVL(node->left);
     destroyAVL(node->right);
     free(node);
+}
+
+// 打印现在没有排课的教室,这个函数是用来打印现在没有排课的教室的,所以需要遍历哈希表,然后遍历每个教学楼,然后遍历每个教室,如果教室没有排课,则打印教室名称
+// 打印格式: 教学楼: 教室名称
+void printUnscheduledClassrooms(HashTable *ht)
+{
+    printf("现在没有排课的教室有:\n");
+    for (int i = 0; i < TABLE_SIZE; i++)
+    {
+        KeyValuePair *current = ht->table[i];
+        while (current != NULL)
+        {
+            for (int j = 0; j < current->building_node->classroom_count; j++)
+            {
+                if (current->building_node->classrooms[j]->is_scheduled == 0)
+                {
+                    printf("%s<---------> %s\n", current->building_node->name, current->building_node->classrooms[j]->name);
+                }
+            }
+            current = current->next;
+        }
+    }
 }
